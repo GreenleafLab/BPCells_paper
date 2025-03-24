@@ -1,0 +1,33 @@
+# Code to run benchmarks on BPCells compressed file formats
+
+- `compression/bitwidth-stats`:
+    - Calculate compression statistics for BPCells bitpacked file formats
+    - Requires: `datasets/atac-process`, `datasets/rna-process`
+    - Produces:
+        - `{RESULTS_ROOT}/raw/compression/bitwidth-stats`: Raw (per-sample or per-matrix) statistics files
+        - `{RESULTS_ROOT}/data_tables/bitwidth-stats`
+    - Figures: Fig S2 
+    - Task summary: 49/49 completed. Total time: 3:44:24
+- `compression/fragments-read-write`:
+    - Read and write (import) benchmarks for ATAC-seq fragment files
+    - Requires: `datasets/atac-process`
+    - Produces:
+        - `{RESULTS_ROOT}/raw/compression/fragments-read-write`: Raw timing outputs
+        - `{RESULTS_ROOT}/data_tables/compression/fragments-read-write/`
+    - Figures: Fig 2g-i 
+    - Task summary: 430/430 completed. Total time: 11 days, 18:17:37
+- `compression/in-memory-compression`
+    - Benchmark in-memory compression performance with general-puropse compression algorithms
+    - Requires: `datasets/atac-process`, `datasets/rna-process`
+    - Produces:
+        - `{RESULTS_ROOT}/raw/compression/in-memory-compression`: Raw timing outputs
+        - `{RESULTS_ROOT}/data_tables/compression/in-memory-compression.tsv.gz`
+    - Figures: Fig 2e+j, Fig S3a
+    - Task summary: 225/225 completed. Total time: 3 days, 10:38:12
+- `compression/rna-1M-cell`
+    - Requires: `datasets/rna-download`
+    - Produces:
+        - `{RESULTS_ROOT}/raw/compression/rna-1M-cell`: Raw timing outputs
+        - `{RESULTS_ROOT}/data_tables/compression/rna-1M-cell.tsv`
+    - Figures: Fig 2b-d
+    - Task summary: 5/5 completed. Total time: 1:09:13

@@ -1,0 +1,29 @@
+# Code to run RNA analysis benchmarks
+- `rna-timing/marker-genes`:
+    - Calculate Wilcoxon marker genes
+    - Requires: `datasets/rna-process`
+    - Produces:
+        - `{DATA_ROOT}/rna/marker-genes`: Marker gene outputs
+        - `{RESULTS_ROOT}/raw/rna-timing/marker-genes`: Raw timing outputs
+        - `{RESULTS_ROOT}/data_tables/rna-timing/marker-genes`
+    - Figures: Fig S1d
+    - Task summary: 140/155 completed. Total time: 1 day, 14:22:26
+        - `high_mem_tasks`: 10/25 completed. Total time: 0:00:09
+- `rna-timing/matrix-transpose`:
+    - Measure the time to swap the storage order of a matrix from cell-major to gene-major
+    - Requires: `datasets/rna-process`
+    - Produces:
+        - `{RESULTS_ROOT}/raw/rna-timing/matrix-transpose`: Raw timing outputs
+        - `{RESULTS_ROOT}/data_tables/rna-timing/matrix-transpose.tsv`
+    - Figures: Fig S3b
+    - Task summary: 100/135 completed. Total time: 5:30:02
+- `rna-timing/pca-benchmark`:
+    - Run Normalization + PCA benchmarks
+    - Requires: `datasets/rna-process`
+    - Produces:
+        - `{DATA_ROOT}/rna/pca`: PCA coordinate outputs
+        - `{RESULTS_ROOT}/raw/rna-timing/pca-benchmark`: Raw timing outputs
+        - `{RESULTS_ROOT}/data_tables/rna-timing/pca-benchmark`
+    - Figures: Fig 1b-d, Fig S1a-c
+    - Task summary: 732/850 completed. Total time: 9 days, 12:35:03
+        - `high_mem_tasks`: 25/100 completed. Total time: 3:18:42
