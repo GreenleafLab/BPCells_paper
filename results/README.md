@@ -3,7 +3,7 @@
 Plotting scripts are present in `plots/atac-timing.R`, `plots/bitwidth-stats.R`, `plots/cellxgene.R`, `plots/compression.R`, and `plots/rna-timing.R`. To run these scripts yourself, clone this repository, then replace this line at the top of each script with the root folder of the repository:
 
 ```r
-repo_root <- "/home/bparks/Sync/BPCells_paper/final/"
+repo_root <- "/home/bparks/Sync/BPCells_paper/final_upload_version/"
 ```
 
 Each script should be able to run end-to-end to produce a folder of svg plots. Within each script there are also commented lines to reproduce numerical claims from the paper or used as annotations on top of the plots.
