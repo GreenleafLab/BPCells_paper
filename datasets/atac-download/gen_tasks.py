@@ -21,7 +21,7 @@ SBATCH_OPTS=" ".join([
 ])
 print(SBATCH_OPTS, file=task_txt)
 
-SINGULARITY=config["CONTAINER_TEMPLATE"].format(CONTAINER="bpcells-locked-v1", OMP_NUM_THREADS=1)
+SINGULARITY=config["CONTAINER_TEMPLATE"].format(CONTAINER="bpcells-v0.3.0", OMP_NUM_THREADS=1)
 DATA_ROOT=config["DATA_ROOT"]
 TMP_ROOT=config["TMP_ROOT"]
 

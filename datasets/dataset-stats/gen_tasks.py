@@ -27,7 +27,7 @@ TMP_ROOT=config["TMP_ROOT"]
 RESULTS_ROOT=config["RESULTS_ROOT"]
 REFERENCE_DIR = f"{DATA_ROOT}/reference_metadata"
 
-SINGULARITY=config["CONTAINER_TEMPLATE"].format(CONTAINER="bpcells-locked-v1", OMP_NUM_THREADS=THREADS)
+SINGULARITY=config["CONTAINER_TEMPLATE"].format(CONTAINER="bpcells-v0.3.0", OMP_NUM_THREADS=THREADS)
 
 rna_datasets = [
     "20k_pbmc", 
