@@ -2,7 +2,7 @@
 
 This folder contains code to download RNA + ATAC datasets and create uniform input files for later benchmarking. (Excludes CELLxGENE download). It doesn't produce any specific figures, but these jobs collect the main data dependencies for other benchmarks. 
 
-Expect at least ~1.5TB of disk space to store all the RNA + ATAC data once it is downloaded and processed into copies with various file formats.
+Initial download steps require ~175GB of storage for RNA, and ~375GB of storage for ATAC. Processed data stored with copies in multiple file formats require a total of ~1.4TB of space for ATAC, and ~900GB of storage for RNA.
 
 - `datasets/atac-download`: 
     - Download ATAC datasets, create BPCells unfiltered fragment files, and call cell barcodes passing quality filters
