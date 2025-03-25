@@ -50,7 +50,7 @@ if (step == "normalize") {
 
     timing <- system.time({
         # Thanks to Hervé Pagès for providing this edited benchmark code
-        # to achieve the best DelayedArray performance. Original code commented out below
+        # for DelayedArray. Original code commented out below
         setAutoGridMaker("colAutoGrid")
         rs0 <- rowSums(mat)
         cs0 <- colSums(mat)
