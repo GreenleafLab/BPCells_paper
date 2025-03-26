@@ -91,7 +91,7 @@ peaks_time <- peak_tile_timing |>
   ggplot(aes(filtered_fragments, time_cpu, color=tool)) +
   style_peak_tile +
   labs(y="CPU Time (seconds)", subtitle="Peak matrix creation")
-ggsave(file.path(plot_dir, "peaks_time.svg"), peaks_time, width=3.5, height=3.75, units="in")
+ggsave(file.path(plot_dir, "peaks_time.svg"), peaks_time, width=3.375, height=3.75, units="in")
 
 # Fig S1f: peak matrix creation memory
 peaks_memory <- peak_tile_timing |>
@@ -116,7 +116,7 @@ tiles_time <- peak_tile_timing |>
   ggplot(aes(filtered_fragments, time_cpu, color=tool)) +
   style_peak_tile +
   labs(y="CPU Time (seconds)", subtitle="Tile matrix creation")
-ggsave(file.path(plot_dir, "tiles_time.svg"), tiles_time, width=3.5, height=3.75, units="in")
+ggsave(file.path(plot_dir, "tiles_time.svg"), tiles_time, width=3.375, height=3.75, units="in")
 
 # Fig S1e: tile matrix creation memory
 tiles_memory <- peak_tile_timing |>
@@ -142,7 +142,7 @@ peaks_subset <- peak_tile_timing |>
   style_peak_tile[-3] +
   scale_x_continuous(transform="log10", guide="axis_logticks", labels=label_si_custom, breaks= c(10, 1e3, 1e5)) +
   labs(x="Peaks", y="CPU Time (seconds)", subtitle="Peak subsets\n(1M cells)\n")
-ggsave(file.path(plot_dir, "peaks_subset.svg"), peaks_subset, width=3.5, height=3.75, units="in")
+ggsave(file.path(plot_dir, "peaks_subset.svg"), peaks_subset, width=3.375, height=3.75, units="in")
 
 
 ################################################################################

@@ -122,7 +122,7 @@ pca_memory_combined_by_cell <- pca_benchmark |>
   ggplot(aes(cells, max_rss, color=normalize_name[tool], fill=normalize_name[tool], group=tool_split)) +
   style_pca_by_cell +
   labs(y="Memory (GB)", subtitle="Normalize & PCA")
-ggsave(plot=pca_memory_combined_by_cell, file.path(plot_dir, "pca_memory_combined_by_cell.svg"), width=3.5, height=3.75)
+ggsave(plot=pca_memory_combined_by_cell, file.path(plot_dir, "pca_memory_combined_by_cell.svg"), width=3.375, height=3.75)
 
 
 # Fig 1c
@@ -134,7 +134,7 @@ pca_time_combined <- pca_benchmark |>
   ggplot(aes(nonzero_entries, time_cpu, color=normalize_name[tool], fill=normalize_name[tool])) +
   style_pca +
   labs(y="CPU Time (seconds)", subtitle="Normalize & PCA")
-ggsave(plot=pca_time_combined, file.path(plot_dir, "pca_time_combined.svg"), width=3.5, height=3.75)
+ggsave(plot=pca_time_combined, file.path(plot_dir, "pca_time_combined.svg"), width=3.375, height=3.75)
 
 
 ################################################################################
@@ -200,7 +200,7 @@ pca_multithread_speedup <- pca_benchmark |>
   ggplot(aes(nonzero_entries, relative_time, color=threads)) +
   style_pca +
   scale_color_manual(values=RColorBrewer::brewer.pal(9, "Reds")[9:5]) +
-  scale_y_continuous(breaks=scales::pretty_breaks()) +
+  scale_y_continuous(breaks=scales::pretty_breaks(), labels = scales::label_number(prefix="   ")) +
   guides(color="legend") +
   theme(legend.position="inside", legend.position.inside = c(0.01, 1), 
       legend.direction="horizontal", legend.text.position="bottom", legend.title.position="top", 
@@ -208,7 +208,7 @@ pca_multithread_speedup <- pca_benchmark |>
   theme(panel.border = element_rect(color="black", linewidth = rel(1), fill=NA)) +
   labs(x="Nonzero entries", y="Relative speedup", color="Threads", subtitle="PCA (multi-threaded BPCells)")
 
-ggsave(plot=pca_multithread_speedup, file.path(plot_dir, "pca_multithread_speedup.svg"), width=3.5, height=3.75)
+ggsave(plot=pca_multithread_speedup, file.path(plot_dir, "pca_multithread_speedup.svg"), width=3.375, height=3.75)
 
 ################################################################################
 # Matrix transpose
