@@ -131,7 +131,7 @@ tiles_memory <- peak_tile_timing |>
   labs(y="Memory (GB)", subtitle="Tile matrix creation")
 ggsave(file.path(plot_dir, "tiles_memory.svg"), tiles_memory, width=3.5, height=3.75, units="in")
 
-# Fig 1g: Peak subset creatio time
+# Fig 1g: Peak subset creation time
 peaks_subset <- peak_tile_timing |>
   filter(str_detect(region_type, "peaks"), dataset=="1m_brain") |>
   group_by(dataset, tool, replicate, peak_count) |>

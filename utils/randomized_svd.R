@@ -8,7 +8,7 @@
 # // [[Rcpp::depends(RcppEigen)]]
 
 # // [[Rcpp::export]]
-# Eigen::MatrixXd orthoganalize_cpp(Eigen::MatrixXd mat) {
+# Eigen::MatrixXd orthogonalize_cpp(Eigen::MatrixXd mat) {
 #     Eigen::ColPivHouseholderQR<Eigen::Ref<Eigen::MatrixXd>> qr(mat);
 #     return qr.householderQ() * Eigen::MatrixXd::Identity(mat.rows(), qr.rank());
 # }
@@ -20,7 +20,7 @@ Rcpp::sourceCpp(code="
 // [[Rcpp::depends(RcppEigen)]]
 
 // [[Rcpp::export]]
-void orthoganalize_in_place_cpp(Eigen::Map<Eigen::MatrixXd> mat) {
+void orthogonalize_in_place_cpp(Eigen::Map<Eigen::MatrixXd> mat) {
     Rprintf(\"Starting QR decomposition\\n\");
     Eigen::ColPivHouseholderQR<Eigen::Ref<Eigen::Map<Eigen::MatrixXd>>> qr(mat);
     Rprintf(\"Starting Q reconstruction\\n\");
@@ -57,7 +57,7 @@ halko_4.4 <- function(A, l, q, frequent_gc=TRUE) {
     if (frequent_gc) {cat(sprintf("At spot 1 %s\n", Sys.time())); gc_with_logging()}
     M <- A %*% M # 2. Calculate Y0 m x l
     if (frequent_gc) {cat(sprintf("At spot 2 %s\n", Sys.time())); gc_with_logging()}
-    orthoganalize_in_place_cpp(M)
+    orthogonalize_in_place_cpp(M)
     # M <- qr(M) # 2. Compute QR factorization of Y0 to get Q0 and R0
     # if (frequent_gc) {cat(sprintf("At spot 2b %s\n", Sys.time())); gc_with_logging()}
     # M <- qr.Q(M) # 2. Get Q0 (m x l)
@@ -65,14 +65,14 @@ halko_4.4 <- function(A, l, q, frequent_gc=TRUE) {
         if (frequent_gc) {cat(sprintf("At spot 3, j=%d %s\n", j, Sys.time())); gc_with_logging()}
         M <- t(A) %*% M # 4. Compute ~Y_j (n x l)
         if (frequent_gc) {cat(sprintf("At spot 4, j=%d %s\n", j, Sys.time())); gc_with_logging()}
-        orthoganalize_in_place_cpp(M)
+        orthogonalize_in_place_cpp(M)
         # M <- qr(M) # 4. Compute ~Q_j and ~R_j (n x l)
         # if (frequent_gc) {cat(sprintf("At spot 4b, j=%d %s\n", j, Sys.time())); gc_with_logging()}
         # M <- qr.Q(M) # 4. Get ~Q_j (n x l)
         if (frequent_gc) {cat(sprintf("At spot 5, j=%d  %s\n", j, Sys.time())); gc_with_logging()}
         M <- A %*% M # 5. Compute Y_j (m x l)
         if (frequent_gc) {cat(sprintf("At spot 6, j=%d  %s\n", j, Sys.time())); gc_with_logging()}
-        orthoganalize_in_place_cpp(M)
+        orthogonalize_in_place_cpp(M)
         # M <- qr(M) # 5. Compute Q_j R_j (m x l)
         # if (frequent_gc) {cat(sprintf("At spot 6b, j=%d  %s\n", j, Sys.time())); gc_with_logging()}
         # M <- qr.Q(M)
@@ -84,7 +84,7 @@ halko_4.4 <- function(A, l, q, frequent_gc=TRUE) {
 #'
 #' Halko et al. Algorithm 5.1 (https://arxiv.org/pdf/0909.4061.pdf)
 #'
-#' This algorithm apprixmates an SVD calculation by performing 2*q + 2
+#' This algorithm approximates an SVD calculation by performing 2*q + 2
 #' dense matrix multiplies, 2*q + 1 QR decompositions, and one SVD. The
 #' dense matrix multiplies are all with an l x (m or n) matrix. The QR
 #' decompositions are on matrices of m x l (1 + q times) and n x l (q times).

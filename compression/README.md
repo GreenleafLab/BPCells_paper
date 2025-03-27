@@ -17,7 +17,7 @@
     - Figures: Fig 2g-i 
     - Task summary: 430/430 completed. Total time: 11 days, 18:17:37
 - `compression/in-memory-compression`
-    - Benchmark in-memory compression performance with general-puropse compression algorithms
+    - Benchmark in-memory compression performance with general-purpose compression algorithms
     - Requires: `datasets/atac-process`, `datasets/rna-process`
     - Produces:
         - `{RESULTS_ROOT}/raw/compression/in-memory-compression`: Raw timing outputs

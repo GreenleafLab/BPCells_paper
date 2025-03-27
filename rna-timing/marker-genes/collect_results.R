@@ -20,7 +20,7 @@ dir.create(output_path, recursive=TRUE, showWarnings=FALSE)
 
 files <- list.files(input_path, full.names=TRUE, recursive=TRUE) |> normalizePath()
 tsv_files <- files[str_detect(files, "rep[0-9].tsv")]
-# Emtpy files from crashed jobs casue issues, so filter those out
+# Empty files from crashed jobs cause issues, so filter those out
 gnutime_files <- files[str_detect(files, "rep[0-9].gnutime.txt") & file.size(files) > 0]
 
 memory <- read_xsv_dataset(gnutime_files, read_gnutime, 

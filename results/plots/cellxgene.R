@@ -537,7 +537,7 @@ mean_variance_timing |>
          relative_time_elapsed=time_elapsed/min(time_elapsed))
 
 # PCA timing: 
-#  - bitpacked genemajor exact: 6.2 hours on lapotop, 51 minutes on server
+#  - bitpacked genemajor exact: 6.2 hours on laptop, 51 minutes on server
 pca_timing |>
   group_by(computer, input, method) |>
   summarize(hours_cpu=mean(time_cpu)/(60*60), hours_elapsed=mean(time_elapsed)/(60*60), minutes_elapsed=mean(time_elapsed)/60)
@@ -582,7 +582,7 @@ slice_timing_extended |>
   group_by(computer, tool, format, axis, slice_size, slice_type) |>
   summarize(time_elapsed=mean(time_elapsed), .groups="drop")
 
-# Methods: Using level 1 compressionsaves 4-12% of time at a cost of 10-18% larger files
+# Methods: Using level 1 compression saves 4-12% of time at a cost of 10-18% larger files
 write_timing |> 
   filter(computer=="server", tool=="TileDB") |>
   group_by(tool, format, compression_level) |>

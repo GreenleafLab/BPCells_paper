@@ -66,7 +66,7 @@ cat(sprintf("Creating graph from knn: %s\n", Sys.time()))
 graph <- knn_to_geodesic_graph(knn, threads=threads)
 rm(knn)
 gc()
-cat(sprintf("Runinng leiden clustering: %s\n", Sys.time()))
+cat(sprintf("Running leiden clustering: %s\n", Sys.time()))
 
 clusts <- cluster_graph_leiden(graph, resolution=1, objective_function="modularity")
 writeLines(as.character(clusts), output_clusts)

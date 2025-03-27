@@ -139,7 +139,7 @@ The per-file column structure is as follows:
 <details>
 <summary><code>data_tables/bitwidth-stats</code></summary>
 
-- `fragment_bitwidth.tsv.gz`: Statisitcs on bits-per-value for fragment files
+- `fragment_bitwidth.tsv.gz`: Statistics on bits-per-value for fragment files
     - `dataset`: Dataset ID
     - `sample`: Sample ID within the dataset
     - `filtered`: true/false if these stats are taken pre- or post-filtering
@@ -156,7 +156,7 @@ The per-file column structure is as follows:
 - `matrix_bitwidth.tsv.gz`: Statistics on bits-per-value for RNA or ATAC matrices
     - `dataset`: Dataset ID
     - `matrix`: Matrix source (peaks, tiles, or rna)
-    - `cell_major`: true/false if matrix hass cell-major ordering
+    - `cell_major`: true/false if matrix has cell-major ordering
     - `ordering`: ordering/sorting of non-major axis (original, mean, nonzero, shuffle)
     - `field`: data field (val, index)
     - `bitwidth`: number of bits used per value
@@ -164,7 +164,7 @@ The per-file column structure is as follows:
 - `matrix_storage.tsv`: Statistics on bytes used per field for matrices
     - `dataset`: Dataset ID
     - `matrix`: Matrix source (peaks, tiles, or rna)
-    - `cell_major`: true/false if matrix hass cell-major ordering
+    - `cell_major`: true/false if matrix has cell-major ordering
     - `ordering`: ordering/sorting of non-major axis (original, mean, nonzero, shuffle)
     - `field`: data field (val, index, metadata, idxptr)
     - `bytes`: number of bytes for the data field

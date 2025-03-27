@@ -9,7 +9,7 @@ running on the local machine which was used for laptop benchmarking.
 
 ## How to re-run a benchmark
 
-Let's say we want to re-run the taks from `compression/rna-1M-cell`. The steps are:
+Let's say we want to re-run the tasks from `compression/rna-1M-cell`. The steps are:
 
 0. Edit the [`config_vars.sh`](../config_vars.sh) file according to the comments there
 1. Generate a `tasks.txt` file: `python compression/rna-1M-cell/gen_tasks.py`
@@ -21,7 +21,7 @@ Let's say we want to re-run the taks from `compression/rna-1M-cell`. The steps a
 3. After everything has run, check that all jobs finished successfully:
     - `python arrayjob/run.py compression/rna-1M-cell -d`
     - If there are errors, check outputs in `compression/rna-1M-cell/logs/error`
-4. Collect per-job output files into final data tables: `Rscript compression/rna-1M-cell/collect_resuts.R`
+4. Collect per-job output files into final data tables: `Rscript compression/rna-1M-cell/collect_results.R`
 
 Note that some benchmarks that require high memory usage like `rna-timing/pca-benchmark` generate two sets
 of task files with differing resource requests. This requires calling `arrayjob/run.py` twice, once on

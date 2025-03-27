@@ -51,5 +51,5 @@ Initial download steps require ~175GB of storage for RNA, and ~375GB of storage 
     - Requires: `atac-process`, `rna-process`
     - Produces:
         - `{RESULTS_ROOT}/raw/datasets/dataset-stats/`: Raw outputs
-        - `{REAULTS_ROOT}/data_tables/datasets/`
+        - `{RESULTS_ROOT}/data_tables/datasets/`
     - Task summary: 15/15 completed. Total time: 0:10:41

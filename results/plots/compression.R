@@ -399,7 +399,7 @@ in_memory_summary %>%
   distinct(codec, filter, level) |>
   nrow()
 
-# BPCells reaad speed 7.4-8.6 GB/s, write speed 5.1-5.6
+# BPCells read speed 7.4-8.6 GB/s, write speed 5.1-5.6
 in_memory_summary %>%
   filter(codec == "BPCells")
 

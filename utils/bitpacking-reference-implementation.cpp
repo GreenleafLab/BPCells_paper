@@ -11,7 +11,7 @@
 
 #include <cstdint>
 
-// Here we use GCC vector for ease of readibility. Each arithmetic
+// Here we use GCC vector for ease of readability. Each arithmetic
 // operation is applied per-element to a length 4 SIMD vector.
 typedef uint32_t uint32x4 __attribute__((vector_size(16), aligned(4)));
 typedef int32_t int32x4 __attribute__((vector_size(16), aligned(4)));

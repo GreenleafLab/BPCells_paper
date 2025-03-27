@@ -19,7 +19,7 @@ bitwidth_distribution <- function(folder, field) {
     len <- file.size(path) / 4
 
     idx <- readBin(path,  "integer", len)[-c(1,2)] |> as.numeric()
-    idx[is.na(idx)] <- 2^31 # Handle R interpereting INT_MIN as NA
+    idx[is.na(idx)] <- 2^31 # Handle R interpreting INT_MIN as NA
     idx <- ifelse(idx < 0, idx + 2^32, idx) # We wanted unsigned int, not signed
 
     # Handle wrap-around for when the 32-bit int overflows

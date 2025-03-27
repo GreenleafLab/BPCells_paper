@@ -30,7 +30,7 @@ read_gnutime <- function(file) {
 #' @param files list of files
 #' @param reader file like read_tsv or read_csv to do the actual reading
 #' @param regex regex with groups to parse file names
-#' @param group_names columnn names for the matched groups
+#' @param group_names column names for the matched groups
 #' @param ... Additional arguments to read_csv
 read_xsv_dataset <- function(files, reader, regex, group_names, ...) {
   matches <- str_match(files, regex)

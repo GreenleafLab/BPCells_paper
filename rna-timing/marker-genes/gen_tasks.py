@@ -55,7 +55,7 @@ dataset_exclusions = {
     "bpcells": [],
     # R dgCMatrix with Seurat can't handle > 2^31 non-zero entries. We'll let it go up to 1m to prove the crash
     "presto": ["2m_perturbseq", "4m_fetal", "11m_jax", "22m_pansci"],
-    # We should almost certainly get timeouts or memory craashes before these 
+    # We should almost certainly get timeouts or memory crashes before these 
     "scanpy": ["11m_jax", "22m_pansci"],
     # I expect timeouts for everything 130k cells and later
     "scanpy_tiecorrect": ["1m_neurons", "2m_perturbseq", "4m_fetal", "11m_jax", "22m_pansci"],
