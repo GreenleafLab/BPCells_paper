@@ -12,7 +12,7 @@ See [`results/README.md`](results/README.md) for details on results file content
 
 ## Inspecting benchmark code or re-running benchmarks
 
-Benchmark code lives under the folders `atac-timing`, `cellxgene`, `compression`, `datasets`, and `rna-timing` (see respective README.md files for details). Each individual benchmarking experiment has a single sub-folder. To get started reviewing a particular benchmark, look at the `gen_tasks.py` file and the commands it prints to a `tasks.txt` file (or just skip to the worker scripts based on naming conventions).
+Benchmark code lives under the folders [`atac-timing`](./atac-timing), [`cellxgene`](./cellxgene), [`compression`](./compression), [`datasets`](./datasets), and [`rna-timing`](./rna-timing) (see respective README.md files for details). Each individual benchmarking experiment has a single sub-folder. To get started reviewing a particular benchmark, look at the `gen_tasks.py` file and the commands it prints to a `tasks.txt` file (or just skip to the worker scripts based on naming conventions).
 
 Benchmarks are run using an ad hoc system using [`arrayjob/run.py`](arrayjob/run.py), [`config_vars.sh`](config_vars.sh), and per-experiment `gen_tasks.py` files within benchmarking subfolders. See [`arrayjob/README.md`](arrayjob/README.md) for details on re-running benchmarks. Please note that some benchmarks can take a very large amount of compute time to run all replicates and tools. You may want to modify `gen_tasks.py` to reduce the number of datasets, replicates, or tools used for certain benchmarks.
 
