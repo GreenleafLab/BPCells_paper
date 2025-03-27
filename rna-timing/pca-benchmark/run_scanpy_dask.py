@@ -46,7 +46,7 @@ def main():
     # sc.pp.scale(adata, zero_center=False)
     # sc.pp.pca(adata, zero_center=True, use_highly_variable=True)
 
-    # Code from Scanpy example: https://scanpy.readthedocs.io/en/stable/tutorials/experimental/dask.html
+    # Code from Scanpy example: https://web.archive.org/web/20250117053910/https://scanpy.readthedocs.io/en/stable/tutorials/experimental/dask.html
     import h5py
     import anndata as ad
     import dask
